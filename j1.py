@@ -22,7 +22,6 @@ def passage(moyenne):
     else:
         return "très bien"
     
-
 def bissextile(annee):
     if (annee%4 == 0 and (annee%100 != 0 or annee%400 == 0)):
         return True;
@@ -82,7 +81,7 @@ def entier(n):
         if (n > maxN):
             maxN=n;
         # print(f"number get : {n}")
-    print(f"Pour n = {startN} => maxN : {maxN}, etape : {etape}")
+    # print(f"Pour n = {startN} => maxN : {maxN}, etape : {etape}")
 
 for i in range(1, 21):
     entier(i)
@@ -95,14 +94,58 @@ for i in range(100):
     listRandom.append(random.randrange(1, 1000))
 
 listRandomImpaire = [val for val in listRandom if val%2 != 0]
-print(listRandomImpaire)
+# print(listRandomImpaire)
 
 # ex 7
 def somme(list):
     sommeTotal = 0
     for element in list:
         sommeTotal += element
-        print(element)
+        # print(element)
     return sommeTotal
 
 somme(listRandomImpaire)
+
+# ex 8
+def max(list):
+    max = 0;
+    for element in list:
+        if (element > max):
+            max = element
+    return max
+
+
+# ex 9 
+
+def mini(list):
+    min = 1000;
+    for element in list:
+        if (element< min):
+            min = element
+    return min
+
+def min2(list):
+    min = 1000;
+    index = 0;
+    for i in range(len(list)):
+        if (list[i] < min):
+            min = list[i]
+            index = i
+    return index;
+
+def min3(list):
+    min = 1000;
+    for element in list:
+        if (element< min):
+            min = element
+
+    listOfIndex = []
+    for i in range(len(list)):
+        if (list[i] == min):
+            listOfIndex.append(i);    
+            
+    return listOfIndex;
+
+print(min3(listRandom));
+
+# ex 10 
