@@ -172,3 +172,14 @@ def inverse(mot):
     return newWorld
 
 # print(inverse("bonjour"))
+
+# ex 12 
+def palindrom(word):
+    inverseWorld = inverse(word)
+    if (word == inverseWorld): return True
+    return False
+
+# print(palindrom("azar"))
+# print(palindrom("aza"))
+
+# ex 13
