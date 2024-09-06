@@ -183,3 +183,13 @@ def palindrom(word):
 # print(palindrom("aza"))
 
 # ex 13
+def fibonacci(n, step):
+    while n <= 1:
+
+        if n <= 1:
+            return n
+        else:
+            print(f"oki {n}")
+        return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(15))
