@@ -1,3 +1,5 @@
+import random
+
 def expo(n):
     value = 2
     for i in range(n):
@@ -17,12 +19,12 @@ def passage(moyenne):
         return "ASSEZ BIEN"
     elif (14 <= moyenne and moyenne < 16):
         return "bien"
-    elif (moyenne >= 16):
+    else:
         return "très bien"
     
 
 def bissextile(annee):
-    if (annee%4 == 0 and annee%100 != 0):
+    if (annee%4 == 0 and (annee%100 != 0 or annee%400 == 0)):
         return True;
     return False;
 
@@ -67,10 +69,10 @@ def nbJourMois(annee, mois):
         return 31; 
     
 
-def entier():
+def entier(n):
+    startN = n
     maxN = 0;
     etape = 0;
-    n = int(input("donner un int > 0 : "))
     while (n > 1):
         if (n%2 == 0):
             n = n / 2;
@@ -80,7 +82,27 @@ def entier():
         if (n > maxN):
             maxN=n;
         # print(f"number get : {n}")
-    print(f"maxN : {maxN}, etape : {etape}")
+    print(f"Pour n = {startN} => maxN : {maxN}, etape : {etape}")
 
-    
-entier()
+for i in range(1, 21):
+    entier(i)
+
+# ex 6
+
+list = [1**3, 2**3, 3**3, 4**3]
+listRandom = []
+for i in range(100):
+    listRandom.append(random.randrange(1, 1000))
+
+listRandomImpaire = [val for val in listRandom if val%2 != 0]
+print(listRandomImpaire)
+
+# ex 7
+def somme(list):
+    sommeTotal = 0
+    for element in list:
+        sommeTotal += element
+        print(element)
+    return sommeTotal
+
+somme(listRandomImpaire)
