@@ -34,9 +34,9 @@ def bissextile(annee):
 
 def nbJoursAnnee(annee):
     if (bissextile(annee)):
-        return 365;        
+        return 366;        
     else :
-        return 364;
+        return 365;
 
 def nbJourMois(annee, mois):
     if (mois == 1): 
@@ -146,6 +146,29 @@ def min3(list):
             
     return listOfIndex;
 
-print(min3(listRandom));
+# print(min3(listRandom));
 
 # ex 10 
+listRandom1 = []
+listRandom2 = []
+for i in range(50):
+    listRandom1.append(random.randrange(1, 1000))
+    listRandom2.append(random.randrange(1, 1000))
+
+def compareList(list1, list2):
+    for elementList1 in list1:
+        for elementList2 in list2:
+            if elementList1 == elementList2: 
+                return True
+    return False
+
+# print(compareList(listRandom1, listRandom2))
+
+# ex 11
+def inverse(mot):
+    newWorld = ""
+    for i in range(len(mot)):
+        newWorld += mot[(len(mot) - 1) - i ]
+    return newWorld
+
+# print(inverse("bonjour"))
