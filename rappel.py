@@ -1,4 +1,4 @@
-import random
+import random, math
 
 def expo(n):
     value = 2
@@ -193,4 +193,28 @@ def fibonacci(n):
       a = (fibonacci(n-1) + fibonacci(n-2))
       return a
 
-print(f"fibona : {fibonacci(5)}")
+
+# ex 14
+mon_dico = {"A": (1,3), "B": (-5, 6), "C": (2,8), "D": (-2, 5)}
+
+# distance calcule : A B = ( x B − x A ) 2 + ( y B − y A ) 2
+# pour distance AC
+xA_distance = mon_dico.get("A")[0]
+xB_distance = mon_dico.get("C")[0]
+yA_distance = mon_dico.get("A")[1]
+yB_distance = mon_dico.get("C")[1]
+
+distance = math.sqrt((xB_distance-xA_distance)**2 + (yB_distance-yA_distance)**2)
+
+print(f"distance : {distance}")
+
+# millieu calculte : (x1 + x2) / 2
+xA_millieu = mon_dico.get("B")[0]
+xB_millieu = mon_dico.get("D")[0]
+yA_millieu = mon_dico.get("B")[1]
+yB_millieu = mon_dico.get("D")[1]
+
+x_millieu = (xA_millieu + xB_millieu) / 2
+y_millieu = (yA_millieu + yB_millieu) / 2
+
+print(f"millieu : {x_millieu} : {y_millieu}")
