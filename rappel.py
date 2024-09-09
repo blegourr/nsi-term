@@ -206,7 +206,7 @@ yB_distance = mon_dico.get("C")[1]
 
 distance = math.sqrt((xB_distance-xA_distance)**2 + (yB_distance-yA_distance)**2)
 
-print(f"distance : {distance}")
+# print(f"distance : {distance}")
 
 # millieu calculte : (x1 + x2) / 2
 xA_millieu = mon_dico.get("B")[0]
@@ -217,4 +217,53 @@ yB_millieu = mon_dico.get("D")[1]
 x_millieu = (xA_millieu + xB_millieu) / 2
 y_millieu = (yA_millieu + yB_millieu) / 2
 
-print(f"millieu : {x_millieu} : {y_millieu}")
+# print(f"millieu : {x_millieu} : {y_millieu}")
+
+
+# ex 15
+zoo_LaFleche = {
+  "ours": ('Europe', 4),
+  "tigre": ('Asie', 7),
+  "girafe": ('Afrique', 11),
+  "hippopotame": ('Afrique', 3),
+}
+
+zoo_Beauval = {
+  "éléphant": ('Asie', 5),
+  "écureuil": ('Asie', 17),
+  "panda": ('Asie', 2),
+  "hippopotame": ('Afrique', 7),
+  "girafe": ('Afrique', 4),
+  "lion": ('Afrique', 17),
+}
+
+def plus_grand_nombre(zoo):  
+  max = None
+  for value in zoo.values():
+      value_number = value[1]
+      if (max == None or value_number > max):
+          max = value_number
+
+  print(f"max : {max}")
+  listOfIndex = []
+  for (key, value) in zoo.items():
+      if value[1] == max:
+          listOfIndex.append(key);
+
+  return listOfIndex;
+
+# print(plus_grand_nombre(zoo_LaFleche))
+
+def nbr_total_continent(zoo, continent):
+    total = 0
+    for value in zoo.values():
+        if (value[0] == continent):
+            total += value[1]
+    return total
+
+# print(nbr_total_continent(zoo_Beauval, "Asie"))
+
+def nbre_pour_animal(zoo, animal):
+    return zoo.get(animal)[1]
+
+# print(nbre_pour_animal(zoo_Beauval, "éléphant"))
