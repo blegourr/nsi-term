@@ -88,13 +88,9 @@ for i in range(1, 21):
 
 # ex 6
 
-list = [1**3, 2**3, 3**3, 4**3]
-listRandom = []
-for i in range(100):
-    listRandom.append(random.randrange(1, 1000))
-
+list = [val**2 for val in range(4)]
+listRandom = [random.randrange(1, 1000) for _ in range(100)]
 listRandomImpaire = [val for val in listRandom if val%2 != 0]
-# print(listRandomImpaire)
 
 # ex 7
 def somme(list):
