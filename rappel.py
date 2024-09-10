@@ -4,7 +4,7 @@ def expo(n):
     value = 2
     for i in range(n):
         value = value*2      
-    return value;
+    return value
 
 # print(expo(5))
 
@@ -24,62 +24,62 @@ def passage(moyenne):
     
 def bissextile(annee):
     if (annee%4 == 0 and (annee%100 != 0 or annee%400 == 0)):
-        return True;
-    return False;
+        return True
+    return False
 
-# print(bissextile(2096));
-# print(bissextile(2092));
-# print(bissextile(2088));
-# print(bissextile(2089));
+# print(bissextile(2096))
+# print(bissextile(2092))
+# print(bissextile(2088))
+# print(bissextile(2089))
 
 def nbJoursAnnee(annee):
     if (bissextile(annee)):
-        return 366;        
+        return 366        
     else :
-        return 365;
+        return 365
 
 def nbJourMois(annee, mois):
     if (mois == 1): 
-        return 31;
+        return 31
     elif (mois == 2): 
         if (bissextile(annee)):
-            return 29;
+            return 29
         else:
-            return 28;
+            return 28
     elif (mois == 3): 
-        return 31;
+        return 31
     elif (mois == 4): 
-        return 30;
+        return 30
     elif (mois == 5): 
-        return 31;
+        return 31
     elif (mois == 6): 
-        return 30;
+        return 30
     elif (mois == 7): 
-        return 31;
+        return 31
     elif (mois == 8): 
-        return 31;
+        return 31
     elif (mois == 9): 
-        return 30;
+        return 30
     elif (mois == 10): 
-        return 31;
+        return 31
     elif (mois == 11): 
-        return 30;
+        return 30
     else: 
-        return 31; 
+        return 31 
     
 
 def entier(n):
     startN = n
-    maxN = 0;
-    etape = 0;
+    maxN = 0
+    etape = 0
     while (n > 1):
         if (n%2 == 0):
-            n = n / 2;
+            n = n / 2
         else:
             n = (n * 3) + 1
         etape += 1
         if (n > maxN):
-            maxN=n;
+            maxN=n
         # print(f"number get : {n}")
     # print(f"Pour n = {startN} => maxN : {maxN}, etape : {etape}")
 
@@ -104,7 +104,7 @@ somme(listRandomImpaire)
 
 # ex 8
 def max(list):
-    max = 0;
+    max = 0
     for element in list:
         if (element > max):
             max = element
@@ -114,23 +114,23 @@ def max(list):
 # ex 9 
 
 def mini(list):
-    min = 1000;
+    min = 1000
     for element in list:
         if (element< min):
             min = element
     return min
 
 def min2(list):
-    min = 1000;
-    index = 0;
+    min = 1000
+    index = 0
     for i in range(len(list)):
         if (list[i] < min):
             min = list[i]
             index = i
-    return index;
+    return index
 
 def min3(list):
-    min = 1000;
+    min = 1000
     for element in list:
         if (element< min):
             min = element
@@ -138,11 +138,11 @@ def min3(list):
     listOfIndex = []
     for i in range(len(list)):
         if (list[i] == min):
-            listOfIndex.append(i);    
+            listOfIndex.append(i)    
             
-    return listOfIndex;
+    return listOfIndex
 
-# print(min3(listRandom));
+# print(min3(listRandom))
 
 # ex 10 
 listRandom1 = []
@@ -244,9 +244,9 @@ def plus_grand_nombre(zoo):
   listOfIndex = []
   for (key, value) in zoo.items():
       if value[1] == max:
-          listOfIndex.append(key);
+          listOfIndex.append(key)
 
-  return listOfIndex;
+  return listOfIndex
 
 # print(plus_grand_nombre(zoo_LaFleche))
 
