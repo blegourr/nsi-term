@@ -88,7 +88,7 @@ for i in range(1, 21):
 
 # ex 6
 
-list = [val**2 for val in range(4)]
+list = [val**3 for val in range(4)]
 listRandom = [random.randrange(1, 1000) for _ in range(100)]
 listRandomImpaire = [val for val in listRandom if val%2 != 0]
 
