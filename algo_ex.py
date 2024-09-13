@@ -37,10 +37,7 @@ def trie_par_selection(t):
     t = echange(t, i, m)
   return t
 
-perfFunction(trie_par_selection(list))
-
-
-
+# perfFunction(trie_par_selection(list))
 
 """ Algo 2 """
 def insert(t, i, v):
@@ -57,7 +54,7 @@ def tri_par_insertion(t):
     t = insert(t, i, t[i])
   return t
 
-perfFunction(tri_par_insertion(list))
+# perfFunction(tri_par_insertion(list))
 
 
 
@@ -66,9 +63,14 @@ perfFunction(tri_par_insertion(list))
 list2 = ["&é", (20, 5), 5.0,]
 
 def rechercheElement(list, element):
+  step=0
   for val in list:
+    step += 1
     if type(val) == type(element) and val == element:
+      print(f"step : {step}")
       return True
+  # if (element in list): return True
+  print(f"step : {step}")
   return False
 
 # print(rechercheElement(list2, ""))
@@ -79,22 +81,50 @@ def rechercheElement(list, element):
 
 
 """----------------- ex 2.2 -----------------"""
-list2_2 = [1, 5, 8, 9, 12, 15]
+list2_2 = [1, 5, 8, 9, 12, 15, 19, 20, 25, 36, 88, 120] # len == 12
 
 def rechercheElementInDichotomique(list, element):
+  step=0
   found = False
   i_pass = []
-  i_pass.append(round((len(list) -1) / 2, 0))
+  i_pass.append(int(round((len(list) -1) / 2, 0)))
   while  found == False:
-    i = i_pass[len(i_pass) - 1]
-  
-    if (len[i] == element):
+    step += 1
+    i = int(i_pass[len(i_pass) - 1])
+
+    if (i < 0 or i >= len(list)):
+      print(f"step : {step}")
+      return False;
+
+    if (list[i] == element):
+      print(f"step : {step}")
       return True
-    elif element > len[i]:
-      i_pass.append(round(i + (len(list) -1) - (i / 2)))
+    
+    elif element > list[i]:
+      if ((len(list)-(i+1))/2 < 1 and (len(list)-(i+1))/2 > 0):
+        iAddPass = i+1
+
+      else:
+        iAddPass = int(round((len(list)-(i+1))/2 + i , 0))
+
+      if (iAddPass in i_pass): 
+        print(f"step : {step}")
+        return False
+
+      i_pass.append(iAddPass)
+
     else:
-      i_pass.append(round(i / 2))
+      iAddPass = int(round(i / 2, 0))
+      if (iAddPass in i_pass): 
+        print(f"step : {step}")
+        return False
 
+      i_pass.append(iAddPass)
 
+# print(rechercheElementInDichotomique(list2_2, 4))
 
-rechercheElementInDichotomique(list2_2, 5)
+"""----------------- ex 2.3 -----------------"""
+list0 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+rechercheElement(list0, 1)
+rechercheElementInDichotomique(list0, 1)
