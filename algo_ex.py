@@ -80,7 +80,7 @@ def rechercheElement(list, element):
 # print(rechercheElement(list2, 5.1))
 
 
-"""----------------- ex 2.2 -----------------"""
+"""----------------- ex 2.2 and 2.3 -----------------"""
 list2_2 = [1, 5, 8, 9, 12, 15, 19, 20, 25, 36, 88, 120] # len == 12
 
 def rechercheElementInDichotomique(list, element):
@@ -126,5 +126,27 @@ def rechercheElementInDichotomique(list, element):
 """----------------- ex 2.3 -----------------"""
 list0 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
-rechercheElement(list0, 1)
-rechercheElementInDichotomique(list0, 1)
+# rechercheElement(list0, 1)
+# rechercheElementInDichotomique(list0, 1)
+
+
+
+"""----------------- ex 3 -----------------"""
+system=[0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100]
+somme = 549
+
+def moneyRendue(system, somme):
+  somme_restante = somme
+  money = []
+
+  while somme_restante > 0:
+    # get the max value in money < somme_restant
+    for i in range(len(system)):
+      if (somme_restante >= system[len(system) - (i+1)]):
+        somme_restante -= system[len(system) - (i+1)]
+        money.append(system[len(system) - (i+1)])
+        break
+
+  return money
+
+print(moneyRendue(system, somme))
