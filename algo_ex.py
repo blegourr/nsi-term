@@ -1,4 +1,4 @@
-import time
+import time, math
 
 """----------------- ex 1 -----------------"""
 """ function """
@@ -150,3 +150,49 @@ def moneyRendue(system, somme):
   return money
 
 print(moneyRendue(system, somme))
+
+"""----------------- ex 4 -----------------"""
+c = [["c1", 1,1], ["c1", 1,2], ["c1", 1,4], ["c1", 2,1], ["c1", 3,1], ["c1", 3,3], ["c1", 3,4], ["c2", 4,1], ["c2", 4,2], ["c2", 4,4], ["c2", 5,1], ["c2", 6,2], ["c2", 7,2], ["c2", 7,3]]
+m = (4,5)
+def distanceM(c, m):
+  xA_distance = m[0]
+  yA_distance = m[1]
+
+  for (i, val) in enumerate(c):
+    xB_distance = val[1]
+    yB_distance = val[2]
+    distance = math.sqrt((xB_distance-xA_distance)**2 + (yB_distance-yA_distance)**2)
+    c[i].append(distance)
+  
+  return c
+
+c = distanceM(c, m)
+
+
+# trie par sélection 
+def echangeEx4(t, i, j):
+  tmp = t[i]
+  t[i] = t[j]
+  t[j] = tmp
+  return t
+
+def trie_par_selectionEx4(t):
+  # trie par sélection dans l'ordre croissant
+  for i in range(len(c)):
+    # print(f"i1 : {i}")
+    m=i
+    for j in range(i+1, len(t)):
+      # print(f"j1 : {j}")
+      if t[j][3] < t[m][3]:
+        m=j
+    # print(f"m1 : {m}")
+    t = echangeEx4(t, i, m)
+  return t
+
+c = trie_par_selectionEx4(c)
+
+
+def plusProche(k, c):
+  kProche = []
+  for i in range(k):
+    kProche.append(c[i])
