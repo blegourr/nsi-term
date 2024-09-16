@@ -153,7 +153,8 @@ print(moneyRendue(system, somme))
 
 """----------------- ex 4 -----------------"""
 c = [["c1", 1,1], ["c1", 1,2], ["c1", 1,4], ["c1", 2,1], ["c1", 3,1], ["c1", 3,3], ["c1", 3,4], ["c2", 4,1], ["c2", 4,2], ["c2", 4,4], ["c2", 5,1], ["c2", 6,2], ["c2", 7,2], ["c2", 7,3]]
-m = (4,5)
+m = [4,5]
+
 def distanceM(c, m):
   xA_distance = m[0]
   yA_distance = m[1]
@@ -196,3 +197,23 @@ def plusProche(k, c):
   kProche = []
   for i in range(k):
     kProche.append(c[i])
+  return kProche
+
+c = plusProche(5, c)
+
+def nombreDoccurence(c):
+  c1 = 0
+  c2 = 0
+  for i in range(len(c)):
+    if c[i][0] == "c1":
+      c1 += 1
+    else:
+      c2 += 1
+
+  return [c1,c2]
+
+occurence = nombreDoccurence(c)
+if (occurence[0] > occurence [1]):
+  m[3] = "c1"
+else:
+  m[3] = "c2"

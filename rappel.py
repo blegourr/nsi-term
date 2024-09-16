@@ -180,14 +180,17 @@ def palindrom(word):
 
 # ex 13
 def fibonacci(n):
-  if n == 0:
-    return 0
-  else:
-    if n==1:
-      return 1
+  terme = 0
+  suiteFibonacci=[]
+  while terme < n:
+    if terme == 0:
+      suiteFibonacci.append(0)
+    elif terme == 1:
+      suiteFibonacci.append(1)
     else:
-      a = (fibonacci(n-1) + fibonacci(n-2))
-      return a
+        suiteFibonacci.append(suiteFibonacci[terme - 1], suiteFibonacci[terme - 2])
+    terme+=1
+  print(suiteFibonacci)
 
 
 # ex 14
