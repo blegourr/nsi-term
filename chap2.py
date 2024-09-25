@@ -77,7 +77,7 @@ def disque(rayon):
     772.8317927830891
     """
     assert type(rayon) == float;
-    return 2*math.pi*rayon
+    return math.pi*rayon**2
 
 def rectangle(largeur, longueur):
     """
