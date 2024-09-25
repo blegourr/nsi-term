@@ -83,7 +83,8 @@ def rectangle(largeur, longueur):
     """
      rectangle(largeur: float, longueur: float) -> float
         Renvoie l'air d'un retangle de côtés largeur et longueur.
-
+    >>> rectangle(5.0, 2.0)
+    10.0
 
     """
     assert type(largeur) == float;
@@ -94,7 +95,8 @@ def triangle(base, hauteur):
     """
     triangle(base: float, hauteur: float) -> float
         renvoie l'air d'un triangle de base base et de hauteur hauteur.
-
+    triangle(4.0, 2.0)
+    4.0
 
     """
     assert type(base) == float;
