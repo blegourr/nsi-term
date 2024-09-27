@@ -9,7 +9,6 @@ def indice_du_min(tab:list) -> int: # initialisation de la function
   
   for i in range(len(tab)): # récupère la première value du tab avec la valeur min (ou inférieur)
     if (tab[i] <= min): return i # renvoie l'index min
-
 # ------------------------------
 #               TEST
 # ------------------------------
