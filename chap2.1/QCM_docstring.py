@@ -104,3 +104,4 @@ def correctionQCM(QCM:list):
     '''
     for i in range(len(QCM[0])):  # On parcourt les questions
         affichage_bonne_rep(QCM, i)
+        print("---------------------------")
