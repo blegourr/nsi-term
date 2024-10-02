@@ -13,8 +13,24 @@ def creer_tableaurep(QCM:list)->list:
     permet de créer un tableau ou seront stockées les réponses données 
     par l'utilisateur (1, 2 ou 3 pour chaque question)
     le tableau renvoyé a pour longueur le nombre de questions du QCM soit len(QCM[0]) 	
+    
+    
+    -----------------------
+            EXEMPLE 
+    -----------------------
+    Params :
+        QCM = [
+            ["\"test\"+\"test\"", "\"test\"+\"test2\""],
+            ["test", "test2"],
+            ["test test", "test test2"],
+            ["testtest*", "testtest2*"]
+        ]
+
+    ---------------------------------------------------------
+    Return :
+        tabRep = [0, 0] 
     '''
-    return [0] * len(QCM[0])  # On base la taille du tableau sur le nombre de questions
+    return [0] * len(QCM[0])  # len(QCM[0]) permet de récupérer le nombre de question, [0] * nrbQuestion permet de crée un tableau de taille égale au nombre de question et d'élément uniquement de 0 
 
 
 def affichageQCM(QCM:list, i:int):
@@ -22,12 +38,32 @@ def affichageQCM(QCM:list, i:int):
     permet d'afficher la question n°i du QCM contenue dans le tableau QCM.
     les réponses sont ensuite proposées
     l'étoile indiquant la bonne réponse est supprimée lors de l'affichage
+
+    -----------------------
+            EXEMPLE 
+    -----------------------
+    Params :
+        QCM = [
+            ["\"test\"+\"test\"", "\"test\"+\"test2\""],
+            ["test", "test2"],
+            ["test test", "test test2"],
+            ["testtest*", "testtest2*"]
+        ]
+
+        i = 1
+
+    ---------------------------------------------------------
+    Print :
+        Question 2: "test"+"test2"
+        1. test2
+        2. test test2
+        3. testtest2
     '''
-    question = QCM[0][i]  # Les questions sont sur la première ligne de QCM
-    reponses = [QCM[j][i].replace('*', '') for j in range(1, 4)]  # Les réponses sont sur les lignes 1 à 3
-    print(f"Question {i+1}: {question}")
-    for j, rep in enumerate(reponses, start=1):
-        print(f"{j}. {rep}")
+    question = QCM[0][i]  # Récupère la question présentes sur la première ligne de QCM via son index.
+    reponses = [QCM[j][i].replace('*', '') for j in range(1, 4)]  # Récupère les réponse sur les lignes 1 à 3 via l'index. Et supprime * permettant de marqué la bonne réponse
+    print(f"Question {i+1}: {question}") # affiche la question.
+    for j, rep in enumerate(reponses, start=1): # récupère l'index (variable : j), et la réponse ( variable rep) : la boucle commence avec l'index 1 via le enumerate(list, start = 1)
+        print(f"{j}. {rep}") # affiche les réponses pour la question.
 
 
 def score(QCM:list, rep:list)->list:
@@ -36,14 +72,14 @@ def score(QCM:list, rep:list)->list:
     bonne dans les tableaux de réponse grâce au caractère *. Le tableau renvoyé 
     ne contient donc que des 0 ou des 1
     '''
-    scores = []
+    scores = [] # init d'un tableau vide pour y stock les valeurs
     for i in range(len(QCM[0])):  # Parcourt des questions
-        bonnes_reponses = [j for j in range(1, 4) if '*' in QCM[j][i]]  # Repères la bonne réponse
+        bonnes_reponses = [j for j in range(1, 4) if '*' in QCM[j][i]]  # Repères la bonne réponse via * mis dans la réponse valide
         if (rep[i] - 1) in [br - 1 for br in bonnes_reponses]:  # On ajuste l'indice de la réponse de l'utilisateur
-            scores.append(1)  # Réponse correcte
+            scores.append(1)  # Réponse correcte set à 1
         else:
-            scores.append(0)  # Réponse incorrecte
-    return scores
+            scores.append(0)  # Réponse incorrecte set à 0
+    return scores # renvoie le score
 
 
 def total(tab_score:list)->tuple:
