@@ -1,3 +1,4 @@
+import sys
 """
 Structure de QCM:
 
@@ -11,11 +12,21 @@ QCM = [
 
 """
 --------------------------------------------------------
+                     GETS_DATA
+--------------------------------------------------------  
+"""
+filePath = sys.argv[2] # "./chap2.1/qcm.txt"
+
+# command to start exemple : 
+# 
+# to covert file.txt to ascii.txt : python importLibrary.py ascii qcm.txt
+# to start programs by ascii : python importLibrary.py start qcm.txt
+"""
+--------------------------------------------------------
                         IMPORT
 --------------------------------------------------------  
 """
 import QCM_docstring;
-
 
 def QCM():
   """
@@ -30,11 +41,10 @@ def QCM():
   #     ["testtest*", "testtest2*"]
   # ]
 
-  QCM = QCM_docstring.getQcmFromFile("./chap2.1/qcm.txt")
+  QCM = QCM_docstring.getQcmFromFile(filePath)
   if type(QCM) != list:
     print(f"Error : {QCM}")
     return
-  print(QCM)
   """
   --------------------------------------------------------
                         CODE 
@@ -66,4 +76,13 @@ def QCM():
   # affiche la correction de toutes les questions
   QCM_docstring.correctionQCM(QCM)
 
-QCM()
+
+
+def getAction():
+  print(sys.argv[1])
+  if (sys.argv[1] == "start"):
+    QCM()
+  elif (sys.argv[1] == "ascii"):
+    QCM_docstring.convertFileToAscii(filePath)
+
+getAction()

@@ -1,4 +1,4 @@
-import os
+import os, copy
 """
 Structure de QCM:
 
@@ -158,11 +158,11 @@ def getQcmFromFile(nameFile:str) -> list: # pathFile:str
     if os.path.exists(nameFile):
         with open(nameFile, 'r') as file:
             # vérifie qu'il y a un nombre de line qui est un modulo de 4 car sinon il trop/pas assez d'éléments dans le fichier
-            # if ((len(file.readlines())) %4 != 0):
-            #     return f"Number of line in {nameFile} is not a % of 4"
-
-            print(file)
-            for i, valueLine in enumerate(file):
+            fileline = file.readlines()
+            if ((len(fileline)) %4 != 0):
+                return f"Number of line in {nameFile} is not a % of 4"
+            
+            for i, valueLine in enumerate(fileline):
                 if (i%4 == 0):
                     QCM[0].append(valueLine)
                 elif (i%4 == 1):
@@ -173,10 +173,56 @@ def getQcmFromFile(nameFile:str) -> list: # pathFile:str
                     QCM[3].append(valueLine)
             
             # vérifie si il y a une seule bonne réponse par question, sinon renvoie la question qui pose pb
-            # if ():
-            #     return
+            for i in range(len(QCM[0])):
+                if (not ("*" in QCM[1][i] or "*" in QCM[2][i] or "*" in QCM[3][i])):
+                    return f"\n---------------\nQCM Question {i} :\n - {QCM[0][i]}Do not have a good response.\n---------------"
 
             return QCM
+    else: 
+        return "file not found"
+
+def convertFileToAscii(nameFile:str) -> list:
+    '''
+    Récupère QCM depuis un fichier tkt et renvoie la variable à la main.
+
+    Params:
+    - pathFile : Chemin d'accès vers le fichier.txt
+
+    Returns:
+    - QCM: Renvoie la variable QCM qui est utilisé dans la library
+    '''
+    QCM=[[], [], [], []]
+
+    if os.path.exists(nameFile):
+        with open(nameFile, 'r') as file:
+            # vérifie qu'il y a un nombre de line qui est un modulo de 4 car sinon il trop/pas assez d'éléments dans le fichier
+            fileline = file.readlines()
+            if ((len(fileline)) %4 != 0):
+                return f"Number of line in {nameFile} is not a % of 4"
+            
+            for i, valueLine in enumerate(fileline):
+                if (i%4 == 0):
+                    QCM[0].append(valueLine)
+                elif (i%4 == 1):
+                    QCM[1].append(valueLine)
+                elif (i%4 == 2):
+                    QCM[2].append(valueLine)
+                elif (i%4 == 3):
+                    QCM[3].append(valueLine)
+            
+            # vérifie si il y a une seule bonne réponse par question, sinon renvoie la question qui pose pb
+            for i in range(len(QCM[0])):
+                if (not ("*" in QCM[1][i] or "*" in QCM[2][i] or "*" in QCM[3][i])):
+                    return f"\n---------------\nQCM Question {i} :\n - {QCM[0][i]}Do not have a good response.\n---------------"
+        
+        newFileAscii = open(nameFile.replace(".", "_ascii."), "w")
+        writeAscii = ""
+        for i in range(len(QCM[0])):
+            for j in range(4): 
+                writeAscii = writeAscii + f"{[ord(c) for c in QCM[j][i]]}" + "\n"
+
+        newFileAscii.write(writeAscii)
+
 
     else: 
         return "file not found"
