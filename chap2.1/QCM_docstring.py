@@ -1,4 +1,4 @@
-import os, copy
+import os
 """
 Structure de QCM:
 
