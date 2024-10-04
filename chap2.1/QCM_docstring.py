@@ -163,14 +163,15 @@ def getQcmFromFile(nameFile:str) -> list: # pathFile:str
                 return f"Number of line in {nameFile} is not a % of 4"
             
             for i, valueLine in enumerate(fileline):
+                line = ''.join(chr(int(i)) for i in valueLine.replace("[", "").replace("]", "").replace("'", "").replace("\n", "").split(", "))
                 if (i%4 == 0):
-                    QCM[0].append(valueLine)
+                    QCM[0].append(line)
                 elif (i%4 == 1):
-                    QCM[1].append(valueLine)
+                    QCM[1].append(line)
                 elif (i%4 == 2):
-                    QCM[2].append(valueLine)
+                    QCM[2].append(line)
                 elif (i%4 == 3):
-                    QCM[3].append(valueLine)
+                    QCM[3].append(line)
             
             # vérifie si il y a une seule bonne réponse par question, sinon renvoie la question qui pose pb
             for i in range(len(QCM[0])):
