@@ -9,6 +9,13 @@ class Voiture:
     def __init__(self, couleur, vitesse) -> None:
         self.couleur = couleur
         self.vitesse = vitesse
+        self.volume = 0
+
+    def rouler(self):
+        print(f"je roule à {self.vitesse}")
+
+    def faire_le_plein(self, volume):
+        self.volume = volume
 
 voit_jonathan = Voiture("rouge", 150)
 voit_denis = Voiture("bleu", 150)
