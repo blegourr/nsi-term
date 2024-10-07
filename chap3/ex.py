@@ -47,3 +47,36 @@ print(a)
 print(a.abscisse())
 
 
+"""----------------- ex 4 -----------------"""
+class Stock:
+    def __init__(self) -> None:
+        self.qt_farine = 0
+        self.nb_oeufs = 0
+        self.qt_beurre = 0
+    
+    def ajouter_beurre(self, beurre):
+        self.qt_beurre += beurre
+
+    def ajouter_farine(self, farine):
+        self.qt_farine += farine
+    
+    def ajouter_oeufs(self, oeufs):
+        self.nb_oeufs += oeufs
+
+    def afficher(self):
+        print("---------------- Stock ----------------")
+        print(f" farine -> {self.ajouter_farine}g")
+        print(f" beurre -> {self.ajouter_beurre}g")
+        print(f" oeufs -> {self.ajouter_oeufs}")
+        print("---------------------------------------")
+    
+    def stock_suffisant_brioche(self):
+        if (self.nb_oeufs >= 4 and self.ajouter_farine >= 350 and self.ajouter_beurre >= 175):
+            return True
+        else:
+            return False
+        
+mon_stock = Stock()
+mon_stock.afficher()
+mon_stock.ajouter_beurre(650)
+mon_stock.afficher()
