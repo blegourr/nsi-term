@@ -98,6 +98,9 @@ def affiche_resultat(tab_total:tuple):
     affiche le résultat de l’utilisateur à partir d'un tableau à deux cases 
     contenant le score de l'utilisateur et le nombre de questions
     '''
+    print("-----------------------------------------")
+    print("                  SCORE                  ")
+    print("-----------------------------------------")
     score, nb_questions = tab_total
     print(f"Votre score est de {score}/{nb_questions}.")
 
@@ -119,6 +122,9 @@ def passageQCM(QCM:list, tabrep:list)->list:
     puis les trois propositions et enfin stocke le numéro de la réponse 
     du candidat dans un tableau qui sera ensuite renvoyé.
     '''
+    print("-----------------------------------------")
+    print("                QUESTION                 ")
+    print("-----------------------------------------")
     for i in range(len(QCM[0])):  # On parcourt les questions
         affichageQCM(QCM, i)
         while True:
@@ -139,6 +145,9 @@ def correctionQCM(QCM:list):
     Affiche la correction de l'ensemble du QCM (uniquement les questions 
     et les bonnes réponses)
     '''
+    print("-----------------------------------------")
+    print("                 REPONSE                 ")
+    print("-----------------------------------------")
     for i in range(len(QCM[0])):  # On parcourt les questions
         affichage_bonne_rep(QCM, i)
         print("---------------------------")
