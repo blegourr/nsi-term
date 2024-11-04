@@ -22,5 +22,5 @@ print(f"Votre personnage à comme niveau d'expériance {hero.get_experiance()}")
 print(f"Vous commencer avec un bâton de marche de masse {hero.get_objet()[0]} que vous pouvez tenir à {hero.get_objet()[1]} main")
 
 # hero.decouverte(10, 1.32, 2)
-hero.decouverte(0, 1.32, 2)
+hero.decouverte(15, 1.32, 3)
 

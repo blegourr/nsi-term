@@ -37,7 +37,7 @@ class PerssonageAvecOutil:
     self.__set_experiance(self.get_experiance()+n)
 
   def decouverte(self, experiance:int, masse:int, main:int):
-    if (self.get_experiance() >= experiance):
+    if (self.get_experiance() >= experiance and main <= 2):
       self.object = Outil(experiance, masse, main)
       print("Nouvel object")
     else:
