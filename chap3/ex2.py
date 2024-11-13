@@ -97,7 +97,7 @@ class Tableau():
     tab = []
     
     for _ in range(i_max - i_min):
-      tab.append(49)
+      tab.append(v)
     
     self.tab = tab
 
@@ -115,8 +115,8 @@ class Tableau():
 
     return str
 
-# tab = Tableau(-5, 10, 67)
-# print(tab)
+tab = Tableau(-5, 10, 67)
+print(tab)
 
 
 """----------------- ex 4 -----------------"""
