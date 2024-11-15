@@ -15,6 +15,5 @@ class Pile:
   def taille(self):
     return len(self.pile)
 
-
   def sommet(self):
     return self.p[len(self.pile) - 1]
