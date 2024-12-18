@@ -38,8 +38,8 @@ def bToDec(mot, b):
     result=result+signes.index(mot[i])*b**(p-i-1)
   return result
 
-print(bToDec('1001101', 2))
-print(bToDec('4D', 16))
+# print(bToDec('1001101', 2))
+# print(bToDec('4D', 16))
 
 def bToDecR(mot, b):
     assert (b > 1 and b < 17)
@@ -51,8 +51,31 @@ def bToDecR(mot, b):
 
     return signes.index(mot[0]) * b**(len(mot) - 1) + bToDec(mot[1:], b)
 
-print(bToDecR('1001101', 2))
-print(bToDecR('4D', 16))
+# print(bToDecR('1001101', 2))
+# print(bToDecR('4D', 16))
 
 """----------------- ex 3 -----------------"""
+def est_palindrome(mot):
+  mot=mot.lower()
+  for i in range(len(mot)//2):
+    if mot[i]!=mot[-i-1]:
+      return False
+  return True
+  
+# print(est_palindrome("test"))
+# print(est_palindrome("testtset"))
 
+def est_palindromeR(mot): 
+  mot = mot.lower()
+  mot = mot.replace(" ", "")
+  if len(mot) <= 1:
+      return True
+  
+  if mot[0] != mot[-1]:
+      return False
+  
+  return est_palindrome(mot[1:-1])
+
+print(est_palindromeR("rad ar"))
+print(est_palindromeR("bonjour"))
+print(est_palindromeR("Level"))
