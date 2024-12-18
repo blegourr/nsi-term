@@ -69,13 +69,24 @@ def est_palindromeR(mot):
   mot = mot.lower()
   mot = mot.replace(" ", "")
   if len(mot) <= 1:
-      return True
+    return True
   
   if mot[0] != mot[-1]:
-      return False
+    return False
   
   return est_palindrome(mot[1:-1])
 
-print(est_palindromeR("rad ar"))
-print(est_palindromeR("bonjour"))
-print(est_palindromeR("Level"))
+# print(est_palindromeR("rad ar"))
+# print(est_palindromeR("bonjour"))
+# print(est_palindromeR("Level"))
+
+"""----------------- ex 4 -----------------"""
+def hanoi(n, depart, arrivee, auxiliaire):
+  if n == 1:  # Cas de base : un seul disque à déplacer
+    print(f"Déplacer le disque 1 de {depart} à {arrivee}")
+  else:
+    hanoi(n-1, depart, auxiliaire, arrivee)
+    print(f"Déplacer le disque {n} de {depart} à {arrivee}")
+    hanoi(n-1, auxiliaire, arrivee, depart)
+
+hanoi(3, "A", "C", "B")
