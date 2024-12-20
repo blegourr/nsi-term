@@ -89,4 +89,36 @@ def hanoi(n, depart, arrivee, auxiliaire):
     print(f"Déplacer le disque {n} de {depart} à {arrivee}")
     hanoi(n-1, auxiliaire, arrivee, depart)
 
-hanoi(3, "A", "C", "B")
+# hanoi(3, "A", "C", "B")
+
+
+"""----------------- Final -----------------"""
+import turtle as tu
+
+def koch_segment(t, length, level):
+    if level == 0:
+        t.forward(length)
+    else:
+        length /= 3.0
+        koch_segment(t, length, level - 1)
+        t.left(60)
+        koch_segment(t, length, level - 1)
+        t.right(120)
+        koch_segment(t, length, level - 1)
+        t.left(60)
+        koch_segment(t, length, level - 1)
+
+t = tu.Turtle()
+t.speed(0)
+t.hideturtle()
+t.penup()
+t.goto(-150, 150)
+t.pendown()
+t.color("blue")
+t.pensize(2)
+
+for _ in range(3): 
+    koch_segment(t, 300, 4)
+    t.right(120)
+
+tu.done()
