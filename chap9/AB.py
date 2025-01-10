@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Dec  6 14:29:04 2022
-
-@author: mperenno
-"""
-
 class ArbreBinaire:
     """Structure de donnée d'arbre binaire
 
@@ -37,9 +30,7 @@ class ArbreBinaire:
         return True
 
     def est_feuille(self):
-        if (self.droit or self.gauche):
-            return False
-        return True
+      return not (self.droit or self.gauche)
 
     def branche(self, noeud):
         if self.est_vide():
@@ -78,7 +69,20 @@ class ArbreBinaire:
                 if profondeur_droit != -1:
                     return 1 + profondeur_droit
         return -1
-
+    
+    def taille(self):
+        compteur = 1
+        if self.est_vide():
+            return -1
+        if self.est_feuille():
+            return 1
+        else:
+            if self.gauche:
+                compteur += self.gauche.taille()
+            if self.droit:
+                compteur += self.droit.taille()
+            return compteur   
+         
 def affiche(arbre):
     if arbre != None:
         return (arbre.data, affiche(arbre.gauche), affiche(arbre.droit))

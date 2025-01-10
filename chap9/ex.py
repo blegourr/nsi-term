@@ -1,4 +1,4 @@
-from AB import ArbreBinaire;
+from AB import ArbreBinaire,affiche;
 
 
 """----------------- ex 2 -----------------"""
@@ -10,3 +10,6 @@ nd = ArbreBinaire(6, ng, nd)
 ngd = ArbreBinaire(3)
 ng = ArbreBinaire(10, droit=ngd)
 arbre = ArbreBinaire(5, ng, nd)
+
+print(arbre.taille())
+print(affiche(arbre))
