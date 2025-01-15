@@ -57,15 +57,15 @@ class ArbreBinaire:
       return -1
     if self == noeud:
       return 0
-    else:
-      if self.gauche:
-        profondeur_gauche = self.gauche.profondeur(noeud)
-        if profondeur_gauche != -1:
-          return 1 + profondeur_gauche
-      if self.droit:
-        profondeur_droit = self.droit.profondeur(noeud)
-        if profondeur_droit != -1:
-          return 1 + profondeur_droit
+    
+    if self.gauche:
+      profondeur_gauche = self.gauche.profondeur(noeud)
+      if profondeur_gauche != -1:
+        return 1 + profondeur_gauche
+    if self.droit:
+      profondeur_droit = self.droit.profondeur(noeud)
+      if profondeur_droit != -1:
+        return 1 + profondeur_droit
     return -1
   
   def taille(self):
@@ -74,15 +74,47 @@ class ArbreBinaire:
         return -1
     if self.est_feuille():
       return 1
-    else:
-      if self.gauche:
-        compteur += self.gauche.taille()
-      if self.droit:
-        compteur += self.droit.taille()
-      return compteur
+    
+    if self.gauche:
+      compteur += self.gauche.taille()
+    if self.droit:
+      compteur += self.droit.taille()
+    return compteur
   
-  
-        
+  def nbFeuille(self):
+    compteur = 0
+    if self.est_vide():
+        return -1
+    if self.est_feuille():
+      return 1
+
+    if self.gauche:
+      compteur += self.gauche.nbFeuille()
+    if self.droit:
+      compteur += self.droit.nbFeuille()
+    return compteur
+    
+  def parcours_infixe(self):
+    if self.gauche:
+      self.gauche.parcours_infixe()
+    print(self, end=',')
+    if self.droit:
+      self.droit.parcours_infixe()
+      
+  def parcours_prefix(self):
+    print(self, end=',')
+    if self.gauche:
+      self.gauche.parcours_prefix()
+    if self.droit:
+      self.droit.parcours_prefix()
+
+  def parcours_suffixe(self):
+    if self.gauche:
+      self.gauche.parcours_suffixe()
+    if self.droit:
+      self.droit.parcours_suffixe()
+    print(self, end=',')
+
 def affiche(arbre):
   if arbre != None:
     return (arbre.data, affiche(arbre.gauche), affiche(arbre.droit))
