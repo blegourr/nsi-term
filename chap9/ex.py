@@ -1,4 +1,4 @@
-from AB import ArbreBinaire,affiche;
+from AB import ArbreBinaire,affiche,afficher_parcours_suffixe;
 
 
 """----------------- ex 2 -----------------"""
@@ -16,3 +16,4 @@ print(affiche(arbre))
 print(arbre.parcours_infixe())
 print(arbre.parcours_prefix())
 print(arbre.parcours_suffixe())
+print(afficher_parcours_suffixe(arbre))

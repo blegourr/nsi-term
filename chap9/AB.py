@@ -118,3 +118,9 @@ class ArbreBinaire:
 def affiche(arbre):
   if arbre != None:
     return (arbre.data, affiche(arbre.gauche), affiche(arbre.droit))
+
+def afficher_parcours_suffixe(arbre):
+  if arbre != None:
+    afficher_parcours_suffixe(arbre.gauche)
+    afficher_parcours_suffixe(arbre.droit)
+    print(arbre.data, end=',')
