@@ -48,9 +48,9 @@ def tourneCarre(image, x, y, n):
     tourneCarre(image,x+m,y+m, m)
 
     echangecarre(image,x,y,x+m,y,m)       
-    echangecarre(image,x,y+m,x+m,y+m,m)
     echangecarre(image,x+m,y,x,y+m,m)
     echangecarre(image,x+m,y+m,x,y,m)
+    echangecarre(image,x,y+m,x+m,y+m,m)
 
 def rotation(image):
   """
