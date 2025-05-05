@@ -2,7 +2,8 @@ from PIL import Image
 
 def echangePixel(image, x1, y1, x2, y2):
   """
-  Échange les pixels entre (x1, y1) et (x2, y2) dans l'image.
+  Échange les pixels entre (x1, y1) et (x2, y2) dans l'image.python -m pip install --upgrade SomePackage
+
   """
   pixel1 = image.getpixel((x1, y1))
   pixel2 = image.getpixel((x2, y2))
