@@ -25,7 +25,7 @@ Grâce aux mathématiques et à l’informatique, on a développé des méthodes
 - **Date d'utilisation** : Antiquité, mais aussi parfois plus tard à des fins pédagogiques ou ludiques.
 
 **Principe :**
-Le chiffre de César est l'un des plus anciens systèmes de chiffrement. Il s'agit d'un chiffrement par substitution mono-alphabétique : chaque lettre du message est remplacée par une autre lettre, située un certain nombre de positions plus loin dans l'alphabet. C'est un chiffrement symétrique : la même clé (le décalage) sert à chiffrer et à déchiffrer.
+Le chiffre de César est l'un des plus anciens systèmes de chiffrement. Il s'agit d'un chiffrement par substitution mono-alphabétique : chaque lettre du message vas subir une translation vers une autre lettre, située un certain nombre de positions plus loin dans l'alphabet. C'est un chiffrement symétrique : la même clé (le décalage) sert à chiffrer et à déchiffrer.
 
 **Exemple :**
 Avec un décalage de 3 :
@@ -65,27 +65,35 @@ La machine Enigma, utilisée par l'Allemagne pendant la Seconde Guerre mondiale,
 2. **Plugboard (tableau de connexions)** : Permet de permuter certaines lettres entre elles.
    - On souhaite choisir **10 paires parmi 26 lettres**, sans tenir compte de l'ordre des paires ni de l'ordre dans chaque paire.
    - Mathématiquement, cela revient à :
-     - D'abord, choisir **20 lettres parmi 26** (combinaison de 26 éléments pris 20 à 20),
-     - Puis, former **10 paires** avec ces 20 lettres.
+     - D'abord, choisir **un sous ensemble à 20 éléments dans un ensemble à 26 éléments** ,
+     
+     - Puis, former **10 couples d'éléments distincts** avec ces 20 lettres.
+   
      - **6 lettres non échangées**, on divise par 6!.
+     
      - L'ordre des paires n'a pas d'importance, on divise par 10! (**nombre de façons d'ordonner les paires**),
+     
      - L'ordre dans chaque paire n'a pas d'importance, on divise par 2^10 (**chaque paire peut être écrite dans 2 sens**).
+   
      - Le nombre de possibilités est :
 ```
 26! / (6! x 10! x 2^10) ≈ 15x10^13
 ```
-3. **Passage à travers les rotors** : Les rotors mélangent les lettres selon un certain ordre (**permutation de l'alphabet**). À chaque frappe, le rotor de droite avance d'un cran, ce qui change la substitution à chaque lettre. Cela crée un **chiffrement polyalphabétique**.
-   - Le choix et l'ordre des rotors correspond à un arrangement de **5 éléments pris 3 à 3** : 5 x 4 x 3 = 60 possibilités.
+1. **Passage à travers les rotors** : Les rotors mélangent les lettres selon un certain ordre (**permutation de l'alphabet**). À chaque frappe, le rotor de droite avance d'un cran, ce qui change la substitution à chaque lettre. Cela crée un **chiffrement polyalphabétique**.
+   - Le choix et l'ordre des rotors correspond à un **triplets d'éléments distincs pris dans un ensemble à 5 élément** : 5 x 4 x 3 = 60 possibilités.
+  
    - Chaque rotor peut être placé sur une des 26 positions (**lettres de l'alphabet**). Pour 3 rotors, c'est comme choisir un 3-uplet avec remise parmi 26, donc 26 x 26 x 26 = ``17*10^3`` positions possibles.
-4. **Passage par le réflecteur** : Relie les lettres deux à deux et renvoie le courant dans l'autre sens, rendant le chiffrement réversible.
+   
+2. **Passage par le réflecteur** : Relie les lettres deux à deux et renvoie le courant dans l'autre sens, rendant le chiffrement réversible.
    - Le réflecteur forme **13 paires de lettres parmi les 26**, sans tenir compte de l'ordre, ni de l'ordre dans la paire.
+  
    - Le nombre de possibilités est :
 ```
 26! / (13! x 2^13) ≈ 79x10^11
 ```
-5. **Retour** : Le courant repasse à travers les rotors et le plugboard.
-6. **Affichage de la lettre chiffrée** : Une lampe s'allume pour indiquer la lettre obtenue.
-7. **Nombre total de configurations** :
+1. **Retour** : Le courant repasse à travers les rotors et le plugboard.
+2. **Affichage de la lettre chiffrée** : Une lampe s'allume pour indiquer la lettre obtenue.
+3. **Nombre total de configurations** :
    - On multiplie les quatre résultats précédents (**rotors, positions, plugboard, réflecteur**) :
 ```60*17*10^3*15*10^13*8*10^12 = 1*10^31```
 
