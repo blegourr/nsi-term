@@ -1,0 +1,130 @@
+# Problématique
+
+**Comment la cryptographie a-t-elle évolué pour rester efficace face aux progrès des techniques de déchiffrement ?**
+
+---
+
+## Introduction
+La question de la sécurité des données est devenue centrale. Chaque jour, des milliards d’informations circulent sur Internet : messages personnels, transactions bancaires, dossiers médicaux, communications gouvernementales... Mais ces données sont-elles vraiment à l’abri ?
+
+Pour sécuriser ces communications, il faut garantir :
+- **la confidentialité**
+- **l'intégrité**
+- **l'authenticité**
+
+Grâce aux mathématiques et à l’informatique, on a développé des méthodes de chiffrement pour protéger les informations. Nous allons voir, à travers différents exemples, l’évolution de la cryptographie :
+- le chiffre de César
+- la machine Enigma
+- le chiffrement RSA
+
+---
+
+## Le chiffre de César
+- **Signification** : Nommé d'après Jules César, qui l'utilisait pour ses communications militaires.
+- **Date de création** : Vers -50 av. J.-C.
+- **Date d'utilisation** : Antiquité, mais aussi parfois plus tard à des fins pédagogiques ou ludiques.
+
+**Principe :**
+Le chiffre de César est l'un des plus anciens systèmes de chiffrement. Il s'agit d'un chiffrement par substitution mono-alphabétique : chaque lettre du message est remplacée par une autre lettre, située un certain nombre de positions plus loin dans l'alphabet. C'est un chiffrement symétrique : la même clé (le décalage) sert à chiffrer et à déchiffrer.
+
+**Exemple :**
+Avec un décalage de 3 :
+- A devient D, B devient E, C devient F, ... jusqu'à Z qui devient C.
+
+Pour chiffrer un message, on applique ce décalage à chaque lettre. Par exemple, "B O N J O U R" devient "E R Q M R X U" avec un décalage de 3.
+Pour déchiffrer, il suffit de soustraire le décalage.
+
+**Modulo :**
+On peut représenter chaque lettre par un nombre de 0 à 25 (A=0, B=1, ..., Z=25). Le chiffrement s'écrit alors :
+```py
+LettreChiffrée = (LettreOriginale + Décalage) % 26
+```
+Exemple avec Z : ``(25+3) % 26 = 28 % 26 = 2``, donc C.
+
+**Sécurité :**
+Le nombre de clés possibles est de 25 (puisqu’un décalage de 0 ne change rien). C'est donc un système très simple à casser :
+- Il suffit d'essayer toutes les possibilités (attaque par force brute).
+- Ou d'utiliser l'analyse fréquentielle (étudier la fréquence des lettres dans le texte chiffré).
+
+---
+
+## Notion mathématique : Factoriel
+Le factoriel d'un nombre n (noté n!) est le produit de tous les entiers de 1 à n. Par exemple, ``4! = 4 x 3 x 2 x 1 = 24``. Il sert à compter le nombre de façons d'ordonner n objets.
+
+---
+
+## La machine Enigma
+- **Signification** : "Enigma" signifie "énigme" en grec, soulignant le caractère mystérieux du système.
+- **Date de création** : 1918 (brevetée par Arthur Scherbius).
+- **Date d'utilisation** : Principalement de 1920 à 1945, surtout pendant la Seconde Guerre mondiale par l'Allemagne.
+
+**Principe :**
+La machine Enigma, utilisée par l'Allemagne pendant la Seconde Guerre mondiale, était un dispositif électromécanique de chiffrement. Son fonctionnement se décompose en plusieurs étapes :
+
+1. **Clavier** : Lorsqu'on appuie sur une lettre, un courant électrique est envoyé dans la machine.
+2. **Plugboard (tableau de connexions)** : Permet de permuter certaines lettres entre elles.
+   - On souhaite choisir **10 paires parmi 26 lettres**, sans tenir compte de l'ordre des paires ni de l'ordre dans chaque paire.
+   - Mathématiquement, cela revient à :
+     - D'abord, choisir **20 lettres parmi 26** (combinaison de 26 éléments pris 20 à 20),
+     - Puis, former **10 paires** avec ces 20 lettres.
+     - **6 lettres non échangées**, on divise par 6!.
+     - L'ordre des paires n'a pas d'importance, on divise par 10! (**nombre de façons d'ordonner les paires**),
+     - L'ordre dans chaque paire n'a pas d'importance, on divise par 2^10 (**chaque paire peut être écrite dans 2 sens**).
+     - Le nombre de possibilités est :
+```
+26! / (6! x 10! x 2^10) ≈ 15x10^13
+```
+3. **Passage à travers les rotors** : Les rotors mélangent les lettres selon un certain ordre (**permutation de l'alphabet**). À chaque frappe, le rotor de droite avance d'un cran, ce qui change la substitution à chaque lettre. Cela crée un **chiffrement polyalphabétique**.
+   - Le choix et l'ordre des rotors correspond à un arrangement de **5 éléments pris 3 à 3** : 5 x 4 x 3 = 60 possibilités.
+   - Chaque rotor peut être placé sur une des 26 positions (**lettres de l'alphabet**). Pour 3 rotors, c'est comme choisir un 3-uplet avec remise parmi 26, donc 26 x 26 x 26 = ``17*10^3`` positions possibles.
+4. **Passage par le réflecteur** : Relie les lettres deux à deux et renvoie le courant dans l'autre sens, rendant le chiffrement réversible.
+   - Le réflecteur forme **13 paires de lettres parmi les 26**, sans tenir compte de l'ordre, ni de l'ordre dans la paire.
+   - Le nombre de possibilités est :
+```
+26! / (13! x 2^13) ≈ 79x10^11
+```
+5. **Retour** : Le courant repasse à travers les rotors et le plugboard.
+6. **Affichage de la lettre chiffrée** : Une lampe s'allume pour indiquer la lettre obtenue.
+7. **Nombre total de configurations** :
+   - On multiplie les quatre résultats précédents (**rotors, positions, plugboard, réflecteur**) :
+```60*17*10^3*15*10^13*8*10^12 = 1*10^31```
+
+**Sécurité :**
+Ce nombre astronomique explique pourquoi Enigma était considérée comme inviolable à l'époque. La probabilité de décrypter un message par hasard est quasi nulle. La complexité d'Enigma réside dans le nombre de configurations possibles, bien plus que dans la difficulté des opérations mathématiques utilisées.
+
+**Comment Enigma a été craquée :**
+La machine Enigma a été cassée grâce aux efforts conjoints de mathématiciens polonais (notamment Marian Rejewski, Jerzy Różycki et Henryk Zygalski) qui ont réussi à reconstituer le fonctionnement interne de la machine dès les années 1930. Plus tard, les Britanniques à Bletchley Park, dirigés par Alan Turing, ont automatisé le décryptage avec des machines appelées "bombes". Ils ont exploité des faiblesses dans les procédures allemandes (messages répétitifs, erreurs humaines, absence de chiffrement d'une lettre par elle-même) et des indices dans les messages pour réduire le nombre de configurations à tester. Cela a permis de lire de nombreux messages allemands et a eu un impact majeur sur l'issue de la guerre.
+
+Source : [bibmath.net - Enigma](https://www.bibmath.net/crypto/index.php?action=affiche&quoi=debvingt/enigmafonc)
+
+---
+
+## Le chiffrement RSA
+- **Signification** : RSA vient des initiales de ses inventeurs : Ron Rivest, Adi Shamir et Leonard Adleman.
+- **Date de création** : 1977.
+- **Utilisation** : Pour de nombreux usages (transactions bancaires, signatures numériques, etc.).
+
+**Principe :**
+RSA est un algorithme de cryptographie asymétrique, utilisant une paire de clés : une publique pour chiffrer et une privée pour déchiffrer. Il repose sur la difficulté de décomposer un grand nombre en facteurs premiers.
+
+**Différences entre symétrique et asymétrique :**
+- Symétrique : même clé pour chiffrer et déchiffrer (ex : chiffre de César, Enigma).
+- Asymétrique : deux clés différentes, l'une publique et l'autre privée (ex : RSA).
+
+---
+
+## Conclusion
+Assurer la sécurité des données est un enjeu majeur dans notre société connectée. Les méthodes de chiffrement (qu’elles soient simples comme le chiffre de César ou complexes comme Enigma et RSA) montrent que la robustesse d’un système dépend de sa conception et de sa complexité.
+
+**Exemple concret :**
+Lors d'une connexion à une page web sécurisée (HTTPS), le chiffrement asymétrique (comme RSA) sert à échanger une clé secrète, puis le chiffrement symétrique (comme AES) est utilisé pour la suite de la communication, car il est plus rapide.
+
+Cependant, la sécurité absolue n’existe pas :
+- les progrès technologiques (quantique, puissance de calcul, nouveaux algorithmes),
+- les failles humaines ou organisationnelles
+peuvent remettre en cause un système.
+
+**Ouverture :**
+L'arrivée des ordinateurs quantiques pourrait bouleverser la cryptographie actuelle, car ils pourraient casser certains algorithmes (comme RSA) très rapidement. De nouveaux protocoles, comme ceux basés sur la cryptographie quantique (QKD, QBER, NISQ), sont en cours de développement pour anticiper cette révolution.
+
+En définitive, on ne peut jamais garantir une sécurité totale, mais on peut la rendre suffisamment forte pour protéger efficacement nos données.
