@@ -113,8 +113,8 @@ Source : [bibmath.net - Enigma](https://www.bibmath.net/crypto/index.php?action=
 - **Utilisation** : Pour de nombreux usages (transactions bancaires, signatures numériques, etc.).
 
 **Principe :**
-RSA est un algorithme de cryptographie asymétrique, utilisant une paire de clés : une publique pour chiffrer et une privée pour déchiffrer. Il repose sur la difficulté de décomposer un grand nombre en facteurs premiers.
-
+ RSA est un algorithme de cryptographie asymétrique, utilisant une paire de clés : une publique pour chiffrer et une privée pour déchiffrer. Il repose sur la difficulté de décomposer un grand nombre en facteurs de nombre premiers.
+ 
 **Différences entre symétrique et asymétrique :**
 - Symétrique : même clé pour chiffrer et déchiffrer (ex : chiffre de César, Enigma).
 - Asymétrique : deux clés différentes, l'une publique et l'autre privée (ex : RSA).
