@@ -54,7 +54,7 @@ Le factoriel d'un nombre n (noté n!) est le produit de tous les entiers de 1 à
 ---
 
 ## La machine Enigma
-- **Signification** : "Enigma" signifie "énigme" en grec, soulignant le caractère mystérieux du système.
+- **Signification** : "Enigma" signifie "énigme" en grec.
 - **Date de création** : 1918 (brevetée par Arthur Scherbius).
 - **Date d'utilisation** : Principalement de 1920 à 1945, surtout pendant la Seconde Guerre mondiale par l'Allemagne.
 
