@@ -95,7 +95,7 @@ La machine Enigma, utilisée par l'Allemagne pendant la Seconde Guerre mondiale,
 2. **Affichage de la lettre chiffrée** : Une lampe s'allume pour indiquer la lettre obtenue.
 3. **Nombre total de configurations** :
    - On multiplie les quatre résultats précédents (**rotors, positions, plugboard, réflecteur**) :
-```60*17*10^3*15*10^13*8*10^12 = 1*10^31```
+```60*17*10^3*15*10^13*8*10^12 = 126*10^29```
 
 **Sécurité :**
 Ce nombre astronomique explique pourquoi Enigma était considérée comme inviolable à l'époque. La probabilité de décrypter un message par hasard est quasi nulle. La complexité d'Enigma réside dans le nombre de configurations possibles, bien plus que dans la difficulté des opérations mathématiques utilisées.
