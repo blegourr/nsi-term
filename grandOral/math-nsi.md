@@ -25,7 +25,7 @@ Grâce aux mathématiques et à l’informatique, on a développé des méthodes
 - **Date d'utilisation** : Antiquité, mais aussi parfois plus tard à des fins pédagogiques ou ludiques.
 
 **Principe :**
-Le chiffre de César est l'un des plus anciens systèmes de chiffrement. Il s'agit d'un chiffrement par substitution mono-alphabétique : chaque lettre du message vas subir une translation vers une autre lettre, située un certain nombre de positions plus loin dans l'alphabet. C'est un chiffrement symétrique : la même clé (le décalage) sert à chiffrer et à déchiffrer.
+Le chiffre de César est l'un des plus anciens systèmes de chiffrement. Il s'agit d'un chiffrement par substitution mono-alphabétique : chaque lettre du message va subir une translation vers une autre lettre, située un certain nombre de positions plus loin dans l'alphabet. C'est un chiffrement symétrique : la même clé (le décalage) sert à chiffrer et à déchiffrer.
 
 **Exemple :**
 Avec un décalage de 3 :
