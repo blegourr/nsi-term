@@ -121,16 +121,20 @@ Source : [bibmath.net - Enigma](https://www.bibmath.net/crypto/index.php?action=
 
 ---
 
+**Exemple concret :** Lors d'une connexion à une page web sécurisée (HTTPS), le chiffrement asymétrique (comme RSA) sert à échanger une clé secrète, puis le chiffrement symétrique (comme AES) est utilisé pour la suite de la communication, car il est plus rapide.
+
 ## Conclusion
+
 Assurer la sécurité des données est un enjeu majeur dans notre société connectée. Les méthodes de chiffrement (qu’elles soient simples comme le chiffre de César ou complexes comme Enigma et RSA) montrent que la robustesse d’un système dépend de sa conception et de sa complexité.
 
-**Exemple concret :**
-Lors d'une connexion à une page web sécurisée (HTTPS), le chiffrement asymétrique (comme RSA) sert à échanger une clé secrète, puis le chiffrement symétrique (comme AES) est utilisé pour la suite de la communication, car il est plus rapide.
-
 Cependant, la sécurité absolue n’existe pas :
-- les progrès technologiques (quantique, puissance de calcul, nouveaux algorithmes),
-- les failles humaines ou organisationnelles
-peuvent remettre en cause un système.
+
+- les progrès technologiques (quantique, puissance de calcul, nouveaux algorithmes),  
+- les failles humaines ou organisationnelles peuvent remettre en cause un système.
+
+**Ouverture :** L'arrivée des ordinateurs quantiques pourrait bouleverser la cryptographie actuelle, car ils pourraient casser certains algorithmes (comme RSA) très rapidement. De nouveaux protocoles, comme ceux basés sur la cryptographie quantique (QKD, QBER, NISQ), sont en cours de développement pour anticiper cette révolution.
+
+En définitive, on ne peut jamais garantir une sécurité totale, mais on peut la rendre suffisamment forte pour protéger efficacement nos données.
 
 **Ouverture :**
 L'arrivée des ordinateurs quantiques pourrait bouleverser la cryptographie actuelle, car ils pourraient casser certains algorithmes (comme RSA) très rapidement. De nouveaux protocoles, comme ceux basés sur la cryptographie quantique (QKD, QBER, NISQ), sont en cours de développement pour anticiper cette révolution.
