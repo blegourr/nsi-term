@@ -89,14 +89,38 @@ $$
 
 $$
 \text{1er câble :} \quad \frac{20!}{2!\,18!} \\
+$$
+
+$$
+\quad
+$$
+
+$$
 \text{2e câble :} \quad \frac{18!}{2!\,16!} \\
+$$
+
+$$
+\quad
+$$
+
+$$
 \ldots \\
+$$
+
+$$
+\quad
+$$
+
+$$
 \text{10e câble :} \quad \frac{2!}{2!\,0!} = 1
 $$
 
+$$
+\quad
+$$
 
 $$
-\text{Simplification :} \quad \frac{20!}{2!\,18!} \times \frac{18!}{2!\,16!} \times \frac{16!}{2!\,14!} \times \cdots \times \frac{2!}{2!\,0!} = \frac{20!}{2!\,\color{red}\cancel{18!}} \times \frac{\color{red}\cancel{18!}}{2!\,\color{red}\cancel{16!}} \times \frac{\color{red}\cancel{16!}}{2!\,\cancel{14!}} \times \cdots \times \frac{\color{red}\cancel{2!}}{2!\,\cancel{0!}} = \frac{20!}{{(2!)^{10}}}
+\text{Simplification :} \quad \frac{20!}{2!\,\color{red}\cancel{18!}} \times \frac{\color{red}\cancel{18!}}{2!\,\color{red}\cancel{16!}} \times \frac{\color{red}\cancel{16!}}{2!\,\cancel{14!}} \times \cdots \times \frac{\color{red}\cancel{2!}}{2!\,\cancel{0!}} = \frac{20!}{{(2!)^{10}}}
 $$
 
 
