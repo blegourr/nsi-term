@@ -132,7 +132,7 @@ $$
 
 
 $$
-\text{Total plugboard :} \quad \frac{26!}{20!\ 6!} \times \frac{20!}{2^{10}} \div 10! \approx 15 \times 10^{13}
+\text{Total plugboard :} \quad \frac{26!\ \color{red}20!}{\color{red}20!\ \color{white}6!\ 2^{10}\ 10!} = \quad \frac{26!\}{6!\ 2^{10}\ 10!} \approx 15 \times 10^{13}
 $$
 
 
@@ -159,7 +159,7 @@ $$
 > Le réflecteur forme 13 paires de lettres parmi les 26, sans tenir compte de l'ordre, ni de l'ordre dans la paire.
 
 $$
-\frac{26!}{13!\,2^{13}} \approx 79 \times 10^{11}
+\frac{26!}{13!\ 2^{13}} \approx 79 \times 10^{11}
 $$
 
 
