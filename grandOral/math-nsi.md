@@ -78,7 +78,7 @@ Il sert à compter le nombre de façons d'ordonner n objets.
 > On souhaite choisir 10 paires parmi 26 lettres, sans tenir compte de l'ordre des paires ni de l'ordre dans chaque paire.
 
 $$
-\text{Choix de 20 lettres parmi 26 (pour 10 paires)} : \quad \binom{26}{20} = \frac{26!}{20!\,6!} = \binom{26}{6}
+\text{Choix de 20 lettres parmi 26 (pour 10 paires)} : \quad \binom{26}{20} = \frac{26!}{20!\ 6!} = \binom{26}{6}
 $$
 
 
@@ -87,7 +87,7 @@ $$
 $$
 
 $$
-\text{1er câble :} \quad \frac{20!}{2!\,18!} \\
+\text{1er câble :} \quad \frac{20!}{2!\ 18!} \\
 $$
 
 $$
@@ -95,7 +95,7 @@ $$
 $$
 
 $$
-\text{2e câble :} \quad \frac{18!}{2!\,16!} \\
+\text{2e câble :} \quad \frac{18!}{2!\ 16!} \\
 $$
 
 $$
@@ -111,7 +111,7 @@ $$
 $$
 
 $$
-\text{10e câble :} \quad \frac{2!}{2!\,0!} = 1
+\text{10e câble :} \quad \frac{2!}{2!\ 0!} = 1
 $$
 
 $$
@@ -119,7 +119,7 @@ $$
 $$
 
 $$
-\text{Simplification :} \quad \frac{20!}{2!\,\color{red}\cancel{18!}} \times \frac{\color{red}\cancel{18!}}{2!\,\color{red}\cancel{16!}} \times \frac{\color{red}\cancel{16!}}{2!\,\cancel{14!}} \times \cdots \times \frac{\color{red}\cancel{2!}}{2!\,\cancel{0!}} = \frac{20!}{{(2!)^{10}}} = \frac{20!}{{2^{10}}}
+\text{Simplification :} \quad \frac{20!}{2!\ \color{red}\cancel{18!}} \times \frac{\color{red}\cancel{18!}}{2!\ \color{red}\cancel{16!}} \times \frac{\color{red}\cancel{16!}}{2!\ \cancel{14!}} \times \cdots \times \frac{\color{red}\cancel{2!}}{2!\ \cancel{0!}} = \frac{20!}{{(2!)^{10}}} = \frac{20!}{{2^{10}}}
 $$
 
 
