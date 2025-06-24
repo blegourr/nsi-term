@@ -20,6 +20,7 @@ Grâce aux **mathématiques** et à l’**informatique**, on a développé des m
 **Signification** : Nommé d'après Jules César, qui l'utilisait pour ses communications militaires.  
 **Date de création** : Vers -50 av. J.-C.  
 **Date d'utilisation** : Antiquité, mais aussi parfois plus tard à des fins pédagogiques.
+**Représentation** : Machine à écrire
 
 **Principe** : Le chiffre de César est l'un des plus anciens systèmes de chiffrement. Il s'agit d'un chiffrement par substitution mono-alphabétique : chaque lettre du message va subir une translation vers une autre lettre, située un certain nombre de positions plus loin dans l'alphabet. C'est un chiffrement **symétrique** : la même clé (le décalage) sert à chiffrer et à déchiffrer.
 
