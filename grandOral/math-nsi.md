@@ -20,7 +20,6 @@ Grâce aux **mathématiques** et à l’**informatique**, on a développé des m
 **Signification** : Nommé d'après Jules César, qui l'utilisait pour ses communications militaires.  
 **Date de création** : Vers -50 av. J.-C.  
 **Date d'utilisation** : Antiquité, mais aussi parfois plus tard à des fins pédagogiques.
-**Représentation** : Machine à écrire
 
 **Principe** : Le chiffre de César est l'un des plus anciens systèmes de chiffrement. Il s'agit d'un chiffrement par substitution mono-alphabétique : chaque lettre du message va subir une translation vers une autre lettre, située un certain nombre de positions plus loin dans l'alphabet. C'est un chiffrement **symétrique** : la même clé (le décalage) sert à chiffrer et à déchiffrer.
 
@@ -68,6 +67,7 @@ Il sert à compter le nombre de façons d'ordonner n objets.
 **Signification** : « Enigma » signifie « énigme » en grec.  
 **Date de création** : 1918 (brevetée par Arthur Scherbius).  
 **Date d'utilisation** : Principalement de 1920 à 1945, surtout pendant la Seconde Guerre mondiale par l'Allemagne.
+**Représentation** : Machine à écrire
 
 **Principe** : La machine Enigma, utilisée par l'Allemagne pendant la Seconde Guerre mondiale, était un dispositif électromécanique de chiffrement. Son fonctionnement se décompose en plusieurs étapes :
 
