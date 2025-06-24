@@ -138,7 +138,7 @@ $$
 
 
 $$
-\text{Total plugboard :} \quad \frac{26!}{20!\,6!} \times \frac{20!}{2^{10}} \div 10! \approx 15 \times 10^{13}
+\text{Total plugboard :} \quad \frac{26!}{20!\ 6!} \times \frac{20!}{2^{10}} \div 10! \approx 15 \times 10^{13}
 $$
 
 
