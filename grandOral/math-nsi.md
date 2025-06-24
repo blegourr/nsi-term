@@ -132,7 +132,7 @@ $$
 
 
 $$
-\text{Total plugboard :} \quad \frac{26!\ \color{red}20!}{\color{red}20!\ \color{white}6!\ 2^{10}\ 10!} = \quad \frac{26!\}{6!\ 2^{10}\ 10!} \approx 15 \times 10^{13}
+\text{Total plugboard :} \quad \frac{26!\ \color{red}20!}{\color{red}20!\ \color{white}6!\ 2^{10}\ 10!} =\quad \frac{26!\}{6!\ 2^{10}\ 10!} \approx 15 \times 10^{13}
 $$
 
 
