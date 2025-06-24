@@ -126,12 +126,6 @@ $$
 - À chaque étape, le numérateur du terme précédent s'annule avec le dénominateur du terme suivant.
 - Il reste donc seulement le $20!$ au numérateur, et $2!$ multiplié 10 fois au dénominateur, soit $(2)^{10}$.
 
-
-$$
-\text{Simplification finale :} \quad \frac{20!}{2^{10}}
-$$
-
-
 $$
 \text{L’ordre des câbles n’importe pas :} \quad 10! \text{ permutations}
 $$
