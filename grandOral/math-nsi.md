@@ -11,10 +11,7 @@ Pour sécuriser ces communications, il faut garantir :
 - **l'intégrité**
 - **l'authenticité**
 
-Grâce aux **mathématiques** et à l’**informatique**, on a développé des méthodes de chiffrement pour protéger les informations. Nous allons voir, à travers différents exemples, l’évolution de la cryptographie :
-- le chiffre de César
-- la machine Enigma
-- le chiffrement RSA
+Grâce aux **mathématiques** et à l’**informatique**, on a développé des méthodes de chiffrement pour protéger les informations.
 
 ---
 
