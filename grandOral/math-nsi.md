@@ -149,7 +149,7 @@ $$
 > Chaque rotor peut être placé sur une des 26 positions (lettres de l'alphabet). Pour 3 rotors c'est comme choisir un 3-uplet avec remise parmi 26 :
 
 $$
-26 \times 26 \times 26 = 17\,576 \text{ positions possibles}
+26 \times 26 \times 26 = 17\ 576 \text{ positions possibles}
 $$
 
 
@@ -172,7 +172,7 @@ $$
 On multiplie les quatre résultats précédents (rotors, positions des rotors, plugboard, réflecteur) :
 
 $$
-60 \times 17\,576 \times 79 \times 10^{11} \times 15 \times 10^{13} \approx 125 \times 10^{31}
+60 \times 17\ 576 \times 79 \times 10^{11} \times 15 \times 10^{13} \approx 125 \times 10^{31}
 $$
 
 Ce nombre astronomique explique pourquoi Enigma était considérée comme inviolable à l'époque. La probabilité de décrypter un message par hasard est quasi nulle. La complexité d'Enigma réside dans le nombre de configurations possibles, bien plus que dans la difficulté des opérations mathématiques utilisées.
