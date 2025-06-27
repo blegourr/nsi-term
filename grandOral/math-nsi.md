@@ -11,7 +11,8 @@ Pour sécuriser ces communications, il faut garantir :
 - **l'intégrité**
 - **l'authenticité**
 
-Grâce aux **mathématiques** et à l’**informatique**, nous allons voir **comment la cryptographie a-t-elle évolué pour rester efficace face aux progrès des techniques de déchiffrement ?**
+Nous allons voir Grâce aux **mathématiques** et à l’**informatique**, **comment la cryptographie a-t-elle évolué pour rester efficace face aux progrès des techniques de déchiffrement ?**
+
 ---
 
 # Le chiffre de César
