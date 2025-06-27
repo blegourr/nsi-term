@@ -119,7 +119,7 @@ $$
 $$
 
 $$
-\text{Simplification :} \quad \frac{20!}{2!\ \color{red}\cancel{18!}} \times \frac{\color{red}\cancel{18!}}{2!\ \color{red}\cancel{16!}} \times \frac{\color{red}\cancel{16!}}{2!\ \cancel{14!}} \times \cdots \times \frac{\color{red}\cancel{2!}}{2!\ \cancel{0!}} = \frac{20!}{{(2!)^{10}}} = \frac{20!}{{2^{10}}}
+\text{Simplification :} \quad \frac{20!}{2!\ \color{red}\cancel{18!}} \times \frac{\color{red}\cancel{18!}}{2!\ \color{red}\cancel{16!}} \times \frac{\color{red}\cancel{16!}}{2!\ \color{red}\cancel{14!}} \times \cdots \times \frac{\color{red}\cancel{2!}}{2!\ \cancel{0!}} = \frac{20!}{{(2!)^{10}}} = \frac{20!}{{2^{10}}}
 $$
 
 
