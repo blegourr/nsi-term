@@ -177,7 +177,7 @@ $$
 
 Ce nombre astronomique explique pourquoi Enigma était considérée comme inviolable à l'époque. La probabilité de décrypter un message par hasard est quasi nulle. La complexité d'Enigma réside dans le nombre de configurations possibles, bien plus que dans la difficulté des opérations mathématiques utilisées.
 
-**Comment Enigma a été craquée** :
+En Question => **Comment Enigma a été craquée** :
 La machine Enigma a été cassée grâce aux efforts conjoints de mathématiciens polonais (notamment Marian Rejewski, Jerzy Różycki et Henryk Zygalski) qui ont réussi à reconstituer le fonctionnement interne de la machine dès les années 1930. Plus tard, les Britanniques à Bletchley Park, dirigés par Alan Turing, ont automatisé le décryptage avec des machines appelées "bombes". Ils ont exploité des faiblesses dans les procédures allemandes (messages répétitifs, erreurs humaines, absence de chiffrement d'une lettre par elle-même) et des indices dans les messages pour réduire le nombre de configurations à tester. Cela a permis de lire de nombreux messages allemands et a eu un impact majeur sur l'issue de la guerre.
 
 *Source : bibmath.net - Enigma*
